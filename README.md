@@ -1,5 +1,5 @@
 
-# Automated Contact Search Using LLMs and Web Scraping
+# Efficient Contact RetrievalthroughWeb Scraping andLLM
 
 This project is a Flask web application that helps users extract relevant contact details from a given website and then processes the collected data using an LLM (LLaMA) to provide the most relevant contact information based on a user-defined problem.
 
