@@ -78,6 +78,16 @@ pip install Flask requests beautifulsoup4 ollama
 ## block diagram
 ![image](https://github.com/user-attachments/assets/a0971e8d-e882-4a76-93dd-a627c5bf5911)
 
+## Output
+![image](https://github.com/user-attachments/assets/4c5d5b2b-912a-4ff4-b364-65598b15bcb4)
+![image](https://github.com/user-attachments/assets/aaa0d6d1-f1ae-4cc7-ae25-97f517620a0f)
+![image](https://github.com/user-attachments/assets/35dfda64-38b1-4be7-bd9e-3888895372df)
+![image](https://github.com/user-attachments/assets/c1ae24da-1bc9-4f07-814a-ac0708f542a3)
+
+
+
+
+
 ## Folder Structure
 ```
 /project-root
