@@ -74,7 +74,8 @@ Install dependencies using:
 ```bash
 pip install Flask requests beautifulsoup4 ollama
 ```
-block diagram
+
+## block diagram
 ![image](https://github.com/user-attachments/assets/a0971e8d-e882-4a76-93dd-a627c5bf5911)
 
 ## Folder Structure
@@ -87,3 +88,4 @@ block diagram
 ├── requirements.txt        # List of project dependencies
 └── README.md               # This README file
 ```
+
