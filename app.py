@@ -3,6 +3,10 @@ import requests
 from bs4 import BeautifulSoup
 import ollama
 from urllib.parse import urljoin
+import urllib3
+
+# Suppress SSL warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 st.set_page_config(page_title="Efficient Contact Retriever", layout="centered")
 st.title("🔍 Efficient Contact Retrieval through Web Scraping and LLM")
@@ -17,7 +21,12 @@ problem = st.text_area("Briefly describe your issue", placeholder="e.g. I need t
 web_data = []
 
 def find_contact_pages(base_url):
-    response = requests.get(base_url)
+    try:
+        response = requests.get(base_url, verify=False)
+    except Exception as e:
+        st.error(f"Connection Error: {str(e)}")
+        return []
+
     if response.status_code != 200:
         st.error(f"Failed to retrieve the webpage. Status code: {response.status_code}")
         return []
@@ -39,10 +48,16 @@ def find_contact_pages(base_url):
     return contact_page_urls
 
 def scrape_contact_page(url):
-    response = requests.get(url)
+    try:
+        response = requests.get(url, verify=False)
+    except Exception as e:
+        st.warning(f"Connection Error while scraping {url}: {str(e)}")
+        return
+
     if response.status_code != 200:
         st.warning(f"Failed to retrieve contact page: {url}")
         return
+
     soup = BeautifulSoup(response.content, 'html.parser')
     web_data.append(soup.get_text(separator='\n', strip=True))
 
